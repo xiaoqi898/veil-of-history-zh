@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>历史之幕 — 跨越全人类的出生抽签</title>
+<meta name="description" content="如果你随机出生为任何一个曾经活过的人类，你最可能降生在何时、何地、何种境遇？一个基于1170亿生命的严谨、可溯源模型。">
+
+<!-- icons -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#100f0d">
+
+<!-- social preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="历史之幕">
+<meta property="og:url" content="https://veil-of-history.netlify.app/">
+<meta property="og:title" content="历史之幕">
+<meta property="og:description" content="如果你随机出生为任何一个曾经活过的人类，你最可能降生在何时、何地、何种境遇？一个基于1170亿生命的严谨、可溯源的互动模型。">
+<meta property="og:image" content="https://veil-of-history.netlify.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="历史之幕 — 117,020,000,000 个人类曾经出生；你是他们之中的一次随机抽签。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="历史之幕">
+<meta name="twitter:description" content="如果你随机出生为任何一个曾经活过的人类，你最可能降生在何时、何地、何种境遇？一个基于1170亿生命的严谨、可溯源的互动模型。">
+<meta name="twitter:image" content="https://veil-of-history.netlify.app/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">历史之<b>幕</b></div>
+  <nav>
+    <a href="#when">时间</a>
+    <a href="#lives">十种人生</a>
+    <a href="#where">地图</a>
+    <a href="#condition">境遇</a>
+    <a href="#comfort">舒适</a>
+    <a href="#roles">角色</a>
+    <a href="#draw">抽签</a>
+    <a href="#method">方法</a>
+  </nav>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero wrap">
+  <div class="glow"></div>
+  <div class="eyebrow kicker">一场思想实验，加上算术</div>
+  <h1 class="display">
+    <span class="l">忘记你是谁。</span>
+    <span class="l">你是一张抽签</span>
+    <span class="l">从曾经活过的<span class="ember">每一个人类</span>中抽出。</span>
+  </h1>
+  <p class="lede">在一道普遍的无知之幕背后，你可能出生为任何一个曾经活过的人——权重不来自世纪的长短，而来自每个时代出生人数的多寡。那么，这场抽签最可能把你放在何时、何地、何种境遇？</p>
+  <div class="bignum">
+    <div class="n mono" id="counter">0</div>
+    <div class="cap">个人类曾经出生 · 你是他们之中的一次随机抽签</div>
+  </div>
+  <div class="scrollcue">向下滚动<span>↓</span></div>
+</header>
+
+<div class="rule"></div>
+
+<!-- ============ WHEN ============ -->
+<section id="when" class="wrap">
+  <div class="shead reveal">
+    <div class="kicker"><span class="idx">I.</span> &nbsp;遗忘的算术</div>
+    <h2 class="display">首先，<em>何时</em>。几乎可以肯定是远古。</h2>
+    <p>这场抽签由出生人数决定——而大多数出生发生在很久以前，在高死亡率之下。仅新石器时代的出生人数就超过了之后所有世纪的总和。每根柱子代表那个时代出生的人类数量。</p>
+  </div>
+  <div class="eras reveal" id="eraStrip"></div>
+
+  <div class="hundred">
+    <div class="hundred-head">
+      <h3 class="subhead" style="margin:38px 0 0">如果1170亿人只有100人…</h3>
+      <div class="toggle" id="hundredToggle">
+        <button class="on" data-by="era">按时代</button>
+        <button data-by="region">按地区</button>
+      </div>
+    </div>
+    <div class="figures" id="figures"></div>
+    <div class="hundred-cap" id="hundredCap">每个小人 ≈ 11.7亿人。悬停探索。</div>
+    <div class="hundred-legend" id="hundredLegend"></div>
+  </div>
+
+  <div class="cumbadge reveal">
+    <div class="stat"><div class="big mono" id="s-pre1650">81%</div><div class="lab">出生在<b>公元1650年之前</b>——前工业、前现代、农耕或采猎。</div></div>
+    <div class="stat"><div class="big mono" id="s-pre1900">94%</div><div class="lab">出生在<b>公元1900年之前</b>。现代世界只是人类经验的一小片。</div></div>
+    <div class="stat"><div class="big mono">7%</div><div class="lab">所有曾经出生的人中有<b>如今仍在世</b>。作为一个现代人，是稀有的。</div></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ============ TEN LIVES ============ -->
+<section id="lives" class="wrap">
+  <div class="shead reveal">
+    <div class="kicker"><span class="idx">II.</span> &nbsp;十种最可能的人生</div>
+    <h2 class="display">那么你实际上会<em>是谁？</em></h2>
+    <p>把每个地区和每个时代交叉，按每个组合中出生人数排序，抽象的数字就变成了十种真实的人生。这些是你出生时最可能面临的境遇——而几乎每一种，都是很久以前亚洲某处的一个农民。</p>
+  </div>
+  <div class="lives" id="livesGrid"></div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ============ WHERE / MAP ============ -->
+<section id="where" class="wrap">
+  <div class="shead reveal">
+    <div class="kicker"><span class="idx">III.</span> &nbsp;探索地图 · 你会落在哪里</div>
+    <h2 class="display">观看人类的中心如何移动。</h2>
+    <p>每个时代的出生人口按该地区在存活人口中的比例分布到真实的世界地图上。拖动滑块或按播放，跟随12个时代的概率变化。<em>点击任何国家</em>查看它在整个历史中的比例——或切换到<em>累计</em>模式查看总和。</p>
+  </div>
+
+  <div class="mapwrap reveal">
+    <div class="mapstage">
+      <svg id="worldmap" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" role="img" aria-label="按时代划分出生比例的世界地图"></svg>
+      <div class="maptip" id="maptip" hidden></div>
+      <div class="maplegend">
+        <span>较少出生</span>
+        <i class="ramp"></i>
+        <span>较多出生</span>
+      </div>
+    </div>
+    <p class="mapnote">一个地区用今天的国界来绘制只是为了帮助你定位——这是一种近似。那些国界在历史的大部分时间里并不存在，每个国家的颜色由其所属的大区决定，而非其自身。（俄罗斯显示在欧亚大草原区域。）</p>
+    <div class="timeline">
+      <div class="treadout">
+        <div><span class="tr-name" id="trName"></span> <span class="tr-span" id="trSpan"></span></div>
+        <div class="tr-right" id="trBirths"></div>
+      </div>
+      <input type="range" id="eraSlider" min="0" max="11" value="0" step="1" aria-label="Era selector">
+      <div class="ticks">
+        <span>190k&nbsp;BCE</span><span>8000&nbsp;BCE</span><span>1&nbsp;CE</span><span>1200</span><span>1650</span><span>1900</span><span>today</span>
+      </div>
+      <div class="tcontrols">
+        <button class="btn small" id="playBtn">▶ &nbsp;播放时间线</button>
+        <div class="toggle" id="modeToggle">
+          <button class="on" data-mode="era">当个时代</button>
+          <button data-mode="cum">累计</button>
+        </div>
+      </div>
+      <div class="trajectory" id="trajectory"></div>
+    </div>
+  </div>
+
+  <h3 class="subhead reveal">结论——跨越全部历史的概率</h3>
+  <div class="toggle reveal" id="unitToggle">
+    <button class="on" data-unit="pct">占全部人类 %</button>
+    <button data-unit="bn">出生人口（十亿）</button>
+  </div>
+  <div class="ranking reveal" id="ranking" style="margin-top:18px"></div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ============ CONDITION ============ -->
+<section id="condition" class="wrap">
+  <div class="shead reveal">
+    <div class="kicker"><span class="idx">IV.</span> &nbsp;你最可能的境遇</div>
+    <h2 class="display">无论地图指向哪里，人生都是艰难的。</h2>
+    <p>因为抽签几乎总是落在前现代，典型的境遇不论地区都几乎固定：勉强糊口、目不识丁、童年夭折的概率如抛硬币。数据为全部历史的出生加权。</p>
+  </div>
+  <div class="cond">
+    <div class="cbox reveal"><div class="num" id="c-pov">—<span class="pc">%</span></div><h3>出生在极端贫困中</h3><p>维持温饱的水平——这定义了近两千年来几乎所有人类的生活标准。</p></div>
+    <div class="cbox reveal"><div class="num" id="c-death">—<span class="pc">%</span></div><h3>兄弟姐妹夭折于童年</h3><p>在有历史记载的大部分时间里，大约一半的孩子在15岁之前死去。你活到成年的概率并不比抛硬币好多少。</p></div>
+    <div class="cbox reveal"><div class="num" id="c-illit">—<span class="pc">%</span></div><h3>一个字也不会读</h3><p>识字是极少数精英的特权。绝大多数曾经活过的人类从未读过或写过任何东西。</p></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ============ COMFORT ============ -->
+<section id="comfort" class="wrap">
+  <div class="shead reveal">
+    <div class="kicker"><span class="idx">V.</span> &nbsp;过上好日子的概率</div>
+    <h2 class="display">电灯？冲水马桶？几乎可以肯定没有。</h2>
+    <p>中等收入或更好的生活方式——电力、公共卫生、清洁饮水、吃饱饭——是最近几代人的产物。以全部曾经出生的人加权计算，大多数读者习以为常的舒适生活，在历史上是极其罕见的。</p>
+  </div>
+  <div class="comfort-hero reveal">
+    <div class="ch-num mono" id="ch-modern">—</div>
+    <div class="ch-lab">的所有曾经出生的人，过上了<b>现代中等收入或更好的生活</b>——1950年后出生且处于极端贫困线以上。<span id="ch-rest">大约20人中有19人从未享受过。</span></div>
+  </div>
+  <div class="cond" id="amenityGrid"></div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ============ ROLES ============ -->
+<section id="roles" class="wrap">
+  <div class="shead reveal">
+    <div class="kicker"><span class="idx">VI.</span> &nbsp;你能成为一个了不起的人吗？</div>
+    <h2 class="display">一个贵族？一个战士？一个国王？</h2>
+    <p>有趣——也令人清醒的问题：抽签让你成为农民以外的什么人的概率是多少？这些是基于历史阶级结构的粗略数量级估计，不是核心出生模型的一部分，但量级本身就是关键。</p>
+  </div>
+  <div class="roles" id="rolesList"></div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ============ DRAW ============ -->
+<section id="draw" class="wrap">
+  <div class="shead reveal">
+    <div class="kicker"><span class="idx">VII.</span> &nbsp;投下命运之签</div>
+    <h2 class="display">从命运之瓮中抽取一个人生。</h2>
+    <p>每次按下都从完整分布中采样一个真实的出生——先是一个时代，然后是该时代内的一个地区，再是该世界中的命运。不断按下，直到抽象的数字变成一个具体的人。</p>
+  </div>
+  <div class="draw reveal">
+    <div class="row">
+      <div class="left">
+        <button class="btn" id="drawBtn">↻ &nbsp;抽取一个人生</button>
+        <div class="tally" id="tally">尚未抽取任何人生。</div>
+      </div>
+      <div class="ticket empty" id="ticket">
+        <div class="stub"><span>LOT № 000000</span><span>历史之幕</span></div>
+        <div class="verdict">按下「抽取一个人生」，在1170亿人中领取你的命运之签。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ============ METHOD ============ -->
+<section id="method" class="wrap">
+  <div class="shead reveal">
+    <div class="kicker"><span class="idx">VIII.</span> &nbsp;模型如何运作</div>
+    <h2 class="display">数字是如何构建的。</h2>
+    <p>每个时代的出生总数有据可查。地区划分是一种估计，因此模型明确标注了不确定性。以下是具体方法。</p>
+  </div>
+  <div class="method reveal">
+    <h3>估算方法</h3>
+    <p style="color:var(--bone-dim)">每个时代的出生数据直接来自人口参考局。每个时代的出生人口按该地区在存活人口中的比例分配——这是出生比例的代理指标。一个地区的累计出生人数为：</p>
+    <div class="eq">births(region) &nbsp;=&nbsp; Σ<sub>era</sub> &nbsp;[ &nbsp;births(era) &nbsp;×&nbsp; populationShare(region, era) &nbsp;]</div>
+    <p style="color:var(--bone-dim)">置信区间来自蒙特卡洛模拟：每个时代的地区比例和出生总数通过对数正态噪声扰动（越古老、越不确定的时代，σ越大，从今天的0.03到旧石器时代的0.45），归一化后求和，共进行4000次抽取。我们报告中位数和第5–95百分位数。</p>
+
+    <h3 style="margin-top:32px">比例矩阵（中位数估计值，每个时代人口的百分比）</h3>
+    <div class="matrix-scroll"><table class="matrix" id="matrix"></table></div>
+
+    <ul class="assump">
+      <li><b>数据强的地方，结论也强。</b>1170亿的总数和时代权重来自已发表、被广泛引用的估计；"你几乎肯定是一个贫穷的前现代农民"这一结论在任何合理的变动下都成立。</li>
+      <li><b>数据弱的地方，不确定性也大。</b>没有人按地区发布累计出生人数。地区份额是对Maddison、McEvedy & Jones、HYDE和联合国数据的透明综合——这正是为什么我们对远古时期传播了广泛的不确定性。</li>
+      <li><b>一个简化假设。</b>我们将一个地区的人口份额视为其出生份额。前现代各地区的出生率大致相近，因此这是合理的；现代时期的高生育率地区（如撒哈拉以南非洲）在份额矩阵中被适当上调以反映这一点。</li>
+    </ul>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ============ SOURCES ============ -->
+<section class="wrap">
+  <div class="shead reveal"><div class="kicker">数据来源</div><h2 class="display">参考文献</h2></div>
+  <ul class="sources reveal">
+    <li><b>每个时代的出生人数及1170亿总数。</b>Population Reference Bureau, <a href="https://www.prb.org/articles/how-many-people-have-ever-lived-on-earth/">"How Many People Have Ever Lived on Earth?"</a> (2022), Table 1.</li>
+    <li><b>极端贫困（1820年约80%）与识字率（1820年约10%）。</b>Our World in Data, <a href="https://ourworldindata.org/a-history-of-global-living-conditions">"A history of global living conditions."</a></li>
+    <li><b>儿童死亡率（约一半在15岁前死亡；1800年约43%在5岁前死亡）。</b>Our World in Data, <a href="https://ourworldindata.org/child-mortality-in-the-past">"Mortality in the past: every second child died."</a></li>
+    <li><b>长期贫困序列。</b>Michail Moatsos, via Our World in Data, <a href="https://ourworldindata.org/extreme-history-methods">"How do we know the history of extreme poverty?"</a></li>
+    <li><b>各地区人口份额随时间的变化。</b>Maddison Project Database; <a href="https://en.wikipedia.org/wiki/Estimates_of_historical_world_population">Estimates of historical world population</a>; McEvedy & Jones, <em>Atlas of World Population History</em> (1978); HYDE 3.x; UN World Population Prospects.</li>
+    <li><b>城市化（1000年前不足约5%，1800年约8%，1900年约16%）。</b>Our World in Data, <a href="https://ourworldindata.org/urbanization">"Urbanization."</a></li>
+    <li><b>电力与卫生设施的获取。</b>Our World in Data, <a href="https://ourworldindata.org/energy-access">"Access to Energy"</a> and <a href="https://ourworldindata.org/sanitation">"Sanitation"</a>; World Bank development indicators.</li>
+    <li><b>阶级结构（贵族约1–3%，教士约5–10%，其余为平民）。</b>中世纪及近代早期社会的标准估计；角色概率为说明性的数量级数字，并非来自核心模型。</li>
+    <li><b>国家→地区映射</b>基于 <a href="https://en.wikipedia.org/wiki/UN_M49">UN M49</a> / ISO-3166 子区域构建，欧亚大草原（哈萨克斯坦、蒙古）归入中亚。</li>
+    <li><b>概念。</b>"无知之幕"源自约翰·罗尔斯，《正义论》（1971年），此处将其扩展至全部人类历史而非单一社会。</li>
+  </ul>
+</section>
+
+<footer class="wrap">
+  <div class="big">"绝大多数人类的一生是短暂的、劳碌的、无名的。在无知之幕背后，那个人生就是你的。"</div>
+  <small>基于可溯源、可复现的模型构建 · 模型代码随页面附送（model.js）· 2026</small>
+</footer>
+
+<script src="vendor/d3.min.js"></script>
+<script src="vendor/topojson-client.min.js"></script>
+<script src="regions.js"></script>
+<script src="model.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
